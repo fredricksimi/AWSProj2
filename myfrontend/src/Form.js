@@ -6,7 +6,7 @@ function RegistrationForm() {
     const submitBaner = (e) => {
         e.preventDefault()
         const bodyFormData = new FormData(e.target);
-        axios.post('http://127.0.0.1:4000/upload', bodyFormData)
+        axios.post('http://ec2-3-80-131-50.compute-1.amazonaws.com:4000/upload', bodyFormData)
         e.target.reset()
     }
     return (

@@ -13,7 +13,7 @@ export default class SignUp extends Component {
     e.preventDefault();
     const { email, password } = this.state;
     console.log( email, password);
-    fetch("http://localhost:4000/register", {
+    fetch("http://ec2-3-80-131-50.compute-1.amazonaws.com:4000/register", {
       method: "POST",
       crossDomain: true,
       headers: {
