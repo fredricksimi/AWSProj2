@@ -30,7 +30,7 @@ class PeopleComponent extends React.Component{
                     .map((person, index) =>
                         <tr>
                             <th key={person.id}>{index+1}</th>
-                            <td><img src={`http://ec2-3-80-131-50.compute-1.amazonaws.com/${person.profilePhoto}`} className="img-fluid" alt='img' style={{width: 70 + 'px', height: 70 + 'px', borderRadius: 50 + 'px'}}/></td>
+                            <td><img src={`http://ec2-3-80-131-50.compute-1.amazonaws.com:4000/${person.profilePhoto}`} className="img-fluid" alt='img' style={{width: 70 + 'px', height: 70 + 'px', borderRadius: 50 + 'px'}}/></td>
                             <td>{person.fullname}</td>
                             <td>{person.bio}</td>
                         </tr>
