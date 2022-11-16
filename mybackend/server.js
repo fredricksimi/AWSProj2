@@ -18,7 +18,7 @@ const JWT_SECRET =
   "hvdvay6ert72839289()aiyg8t87qt72393293883uhefiuh78ttq3ifi78272jbkj?[]]pou89ywe";
 
   app.use(cors({
-    origin: "http://ec2-3-91-203-169.compute-1.amazonaws.com:3000",
+    origin: "http://127.0.0.1:3000",
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
     preflightContinue: false,
     credentials: true

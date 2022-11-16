@@ -29,7 +29,7 @@ export default class UserDetails extends Component {
     console.log(`This is theeeeee ${this.state.fname2}`)
       const { fname2, bio2 } = this.state;
       console.log(this.state);
-      axios.put("http://ec2-3-91-203-169.compute-1.amazonaws.com:4000/update", {
+      axios.put("http://127.0.0.1:4000/update", {
         crossDomain: true,
         headers: {
           "Content-Type": "application/json",
@@ -69,7 +69,7 @@ export default class UserDetails extends Component {
   }
 
   componentDidMount() {
-    fetch("http://ec2-3-91-203-169.compute-1.amazonaws.com:4000/userData", {
+    fetch("http://127.0.0.1:4000/userData", {
       method: "POST",
       crossDomain: true,
       headers: {
