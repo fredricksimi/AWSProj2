@@ -18,7 +18,7 @@ const JWT_SECRET =
   "hvdvay6ert72839289()aiyg8t87qt72393293883uhefiuh78ttq3ifi78272jbkj?[]]pou89ywe";
 
   app.use(cors({
-    origin: "http://127.0.0.1:3000",
+    origin: "*",
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
     preflightContinue: false,
     credentials: true
@@ -79,7 +79,7 @@ app.post('/upload', upload.single('urlpromo'), (req, res) => {
 });
 const User = mongoose.model("UserInfo");
 app.post("/register", async(req, res) => {
-  const { email, password } = req.body;
+  const { email, firstname, lastname, password } = req.body;
   const encryptedPassword = await bcrypt.hash(password, 10);
   try {
     const oldUser = await User.findOne({ email });
@@ -87,7 +87,7 @@ app.post("/register", async(req, res) => {
       return res.json({ error: "User Exists" });
     }
     await User.create({
-      email,
+      email,firstname,lastname,
       password: encryptedPassword,
     });
   } catch (error) {

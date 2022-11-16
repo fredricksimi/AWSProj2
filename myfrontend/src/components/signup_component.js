@@ -5,14 +5,16 @@ export default class SignUp extends Component {
     super(props);
     this.state = {
       email: "",
+      firstname:"",
+      lastname:"",
       password: "",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleSubmit(e) {
     e.preventDefault();
-    const { email, password } = this.state;
-    console.log( email, password);
+    const { email, firstname, lastname, password } = this.state;
+    console.log( email, firstname, lastname, password);
     fetch("http://127.0.0.1:4000/register", {
       method: "POST",
       crossDomain: true,
@@ -23,6 +25,8 @@ export default class SignUp extends Component {
       },
       body: JSON.stringify({
         email,
+        firstname,
+        lastname,
         password,
       }),
     })
@@ -46,6 +50,24 @@ export default class SignUp extends Component {
                     className="form-control"
                     placeholder="Enter email"
                     onChange={(e) => this.setState({ email: e.target.value })}
+                />
+                </div>
+                <div className="mb-3">
+                <label>First Name</label>
+                <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Enter First Name"
+                    onChange={(e) => this.setState({ firstname: e.target.value })}
+                />
+                </div>
+                <div className="mb-3">
+                <label>Last Name</label>
+                <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Enter Last Name"
+                    onChange={(e) => this.setState({ lastname: e.target.value })}
                 />
                 </div>
                 <div className="mb-3">
